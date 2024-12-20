@@ -9,9 +9,9 @@ A Springoot application for managing appointments and bookings. This system allo
  View appointment history
 ## Technology Stack
 - Java 17
- Spring Boot 3.x
- Spring Data JPA
- MySQL
- Gradle
+- Spring Boot 3.x
+- Spring Data JPA
+- MySQL
+- Gradle
 
 
