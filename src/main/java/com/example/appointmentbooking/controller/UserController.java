@@ -13,9 +13,15 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<User> registerUser(@RequestParam String name,
-                                             @RequestParam String email,
-                                             @RequestParam String password) {
-        return ResponseEntity.ok(userService.registerUser(name, email, password));
+    public ResponseEntity<User> registerUser(
+            @RequestParam String name,
+            @RequestParam String email,
+            @RequestParam String password) {
+        try {
+            User user = userService.registerUser(name, email, password);
+            return ResponseEntity.ok(user);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 }
